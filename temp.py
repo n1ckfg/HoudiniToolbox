@@ -27,7 +27,7 @@ getAbcAttr("Cd")
 
 import _alembic_hom_extensions as abc
 
-def println(msg):
+def alert(msg):
     hou.ui.displayMessage(str(msg))
 
 def getAbcAttr(attrName, useTransform=False):
@@ -91,18 +91,18 @@ import _alembic_hom_extensions as abc
 node = hou.pwd()
 geo = node.geometry()
 
-def println(msg):
+def alert(msg):
     hou.ui.displayMessage(str(msg))
     
 #~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~     
 
 for geo in abc.alembicGetSceneHierarchy(url, "/")[2]: 
 
-    println(abc.alembicUserProperty(url, geo[0], "Cd", 0))
+    alert(abc.alembicUserProperty(url, geo[0], "Cd", 0))
 
 '''
 oldAttr = abc.alembicUserProperty("Cd")
-println(str(oldAttr))
+alert(str(oldAttr))
 
 r = float(oldAttr[5])
 g = float(oldAttr[1])
@@ -132,7 +132,7 @@ Requires an abcFileName detail attribute
 @useTransform: looks on the parent node instead. Equivalent to using maya transform instead of shape
 '''
 
-def println(msg):
+def alert(msg):
     hou.ui.displayMessage(msg)
 
 fileName = "untitled.abc"
@@ -146,7 +146,7 @@ for i in range(0, len(geoListRaw)):
     geoName = geoListRaw[i][0]
     geoList.append(geoName)
     
-#println(str(geoList))
+#alert(str(geoList))
 
 # transform
 #path = path.rsplit("/", 1)[0]
@@ -154,7 +154,7 @@ for i in range(0, len(geoListRaw)):
 '''
 x =  abc.alembicArbGeometry(url, path, "Cd", 0.0)
 if x[0]:
-    println(x[0][0])
+    alert(x[0][0])
 '''
 
 
