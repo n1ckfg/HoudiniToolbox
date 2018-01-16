@@ -1,5 +1,8 @@
 import _alembic_hom_extensions as abc
 
+def alert(msg):
+    hou.ui.displayMessage(str(msg))
+
 def getAbcAttr(attrName):
     """
     Gets an alembic attribute from the cache
@@ -19,7 +22,7 @@ def getAbcAttr(attrName):
             path = "/" + childGeo[0] + "/" + childGeo[2][0][0]
             
             x = abc.alembicArbGeometry(url, path, attrName, time)
-            print(x) 
+            alert(x) 
             
 getAbcAttr("Cd")
 
