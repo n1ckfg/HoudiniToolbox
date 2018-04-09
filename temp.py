@@ -22,7 +22,8 @@ def getAbcAttr(attrName):
             path = "/" + childGeo[0] + "/" + childGeo[2][0][0]
             
             x = abc.alembicArbGeometry(url, path, attrName, time)
-            alert(x) 
+            if (x[1] == True):
+                alert(x) 
             
 getAbcAttr("Cd")
 
