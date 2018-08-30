@@ -27,7 +27,7 @@ def getAbcAttr(attrName):
             
 getAbcAttr("Cd")
 
-#~ ~~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+#~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 
 import _alembic_hom_extensions as abc
 
@@ -58,7 +58,7 @@ def getAbcAttr(attrName, useTransform=False):
 
 return getAbcAttr('myAttrname', useTransform=True)
 
-#~ ~~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+#~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 
 import random as rnd
 
@@ -87,8 +87,7 @@ for point in geo.points():
     newColor = (newR, newG, newB)
     point.setAttribValue(Cd, newColor)
 
-
-#~ ~~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+#~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 
 import _alembic_hom_extensions as abc
 
@@ -98,8 +97,6 @@ geo = node.geometry()
 def alert(msg):
     hou.ui.displayMessage(str(msg))
     
-#~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~     
-
 for geo in abc.alembicGetSceneHierarchy(url, "/")[2]: 
 
     alert(abc.alembicUserProperty(url, geo[0], "Cd", 0))
@@ -119,9 +116,7 @@ for point in geo.points():
 
 '''
 
-
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+#~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
 
 import _alembic_hom_extensions as abc
 
